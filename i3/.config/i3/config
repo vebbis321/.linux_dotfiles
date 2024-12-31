@@ -6,7 +6,7 @@ set $mod Mod4
 font pango:Hack Nerd Font 8
 
 # launch polybar 
-exec_always --no-startup-id "~/.config/polybar/launch.sh"
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # for norwegian yes
 exec_always --no-startup-id "setxkbmap -layout us -variant mac"
