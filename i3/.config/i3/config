@@ -6,11 +6,10 @@ set $mod Mod4
 font pango:Hack Nerd Font 8
 
 # launch polybar 
-exec_always ~/.config/polybar/launch.sh &
+exec_always --no-startup-id "~/.config/polybar/launch.sh"
 
 # for norwegian yes
 exec_always --no-startup-id "setxkbmap -layout us -variant mac"
-
 
 #picom
 exec_always --no-startup-id picom
@@ -43,8 +42,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a alacritty
-bindsym $mod+space exec alacritty
+# start a wezterm
+bindsym $mod+space exec "flatpak run org.wezfurlong.wezterm"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -76,8 +75,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen toggle
 
 # monitor
-set $monitor1 "DisplayPort-2"
-set $monitor2 "HDMI-A-2"
+# set $monitor1 "DisplayPort-2"
+set $monitor1 "HDMI-A-2"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -85,19 +84,23 @@ set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
 workspace $ws1 output $monitor1
 workspace $ws2 output $monitor1
 workspace $ws3 output $monitor1
 workspace $ws4 output $monitor1
-
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-workspace $ws5 output $monitor2
-workspace $ws6 output $monitor2
-workspace $ws7 output $monitor2
+workspace $ws5 output $monitor1
+workspace $ws6 output $monitor1
+workspace $ws7 output $monitor1
+workspace $ws8 output $monitor1
+workspace $ws9 output $monitor1
 
 # switch to workspace
+bindsym $mod+0 workspace number 0
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -105,8 +108,11 @@ bindsym $mod+4 workspace number $ws4
 bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
 
 # move focused container to workspace
+bindsym $mod+Shift+0 move container to workspace number 0
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -114,6 +120,8 @@ bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -137,10 +145,9 @@ mode "resize" {
         bindsym Up exec "i3-msg resize grow up $resize_delta px or $resize_delta ppt || i3-msg resize shrink down $resize_delta px or $resize_delta ppt"
         bindsym Down exec "i3-msg resize grow down $resize_delta px or $resize_delta ppt || i3-msg resize shrink up $resize_delta px or $resize_delta ppt"
 
-        # back to normal: Enter or Escape or $mod+r
+        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
 }
 
 # class                 border  bground text    indicator child_border
