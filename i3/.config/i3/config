@@ -42,8 +42,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a wezterm
+# start wezterm
 bindsym $mod+space exec "flatpak run org.wezfurlong.wezterm"
+
+# start wezterm
+bindsym $mod+Shift+space exec brave-browser
 
 # kill focused window
 bindsym $mod+Shift+q kill
