@@ -2,7 +2,7 @@ configuration {
     display-drun: "Applications:";
     display-window: "Windows:";
     drun-display-format: "{name}";
-    font: "Hack Nerd Font Medium 10";
+    font: "Hack Nerd Font Medium 16";
     modi: "window,run,drun";
 
     kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
@@ -16,9 +16,9 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #181616;
+  bg: #000000;
   bg-alt: #585b7066;
-  bg-selected: #0d0c0c;
+  bg-selected: #242424;
 
   fg: #c5c9c5;
   fg-alt: #7f849c;
@@ -53,7 +53,7 @@ element-text {
 }
 
 element-icon {
-  size: 14;
+  size: 20;
   padding: 0 10 0 0;
   background-color: transparent;
 }
