@@ -132,7 +132,7 @@ mode "resize" {
 # class                 border  bground text    indicator child_border
 client.focused          #B90E0A #B90E0A #FFFFFF #B90E0A   #B90E0A
 client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
-client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
+client.unfocused        #181616 #181616 #FFFFFF #181616   #181616 
 client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
